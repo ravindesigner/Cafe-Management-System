@@ -82,7 +82,7 @@ button:hover {
     background-color: #DBC1AC;
     color: #201409;
     cursor: pointer;
-    box-shadow: 0 0 10px #DBC1AC, 0 0 20px #DBC1AC;
+    box-shadow: 0px 0px 10px #DBC1AC;
     transition: 0.3s ease-in-out;
 	font-family:'K24KurdishBold-Bold';
 }
@@ -91,7 +91,7 @@ h2,h1{
 	 font-size:23px;
     color: #DBC1AC;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px #DBC1AC;
+    text-shadow: 0px 0px 10px #DBC1AC;
 }
 
 a {
