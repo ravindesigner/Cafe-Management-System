@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$db   = 'coffee_db';
-$user = 'adminKING';  // This matches the user you created
-$pass = 'ShexRazhan202';  // Ensure this matches the password set for 'adminKING'
+$db   = 'coffee_db'; // nawi database
+$user = 'adminKING';  // usernamy database
+$pass = 'ShexRazhan202';  //passwordi databaseaka 
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
