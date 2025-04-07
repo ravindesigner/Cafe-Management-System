@@ -1,0 +1,122 @@
+
+ @font-face {
+        font-family: "K24KurdishBold-Bold";
+        src: url("K24KurdishBold-Bold.eot"); 
+        src: url("K24KurdishBold-Bold.eot?#iefix") format("embedded-opentype"),
+            url("K24KurdishBold-Bold.ttf") format("truetype"), 
+            url("K24KurdishBold-Bold.woff") format("woff"); 
+        font-weight: normal;
+        font-style: normal;
+        }
+body {
+    text-align: center;
+    background-color: #201409;
+    color: #DBC1AC;
+    font-family: 'K24KurdishBold-Bold', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #DBC1AC;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #DBC1AC;
+    width: 350px;
+    text-align: center;
+}
+input[type="file"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+input[type="number"],
+button,
+select {
+    width: 100%; 
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #201409; 
+    border: 1px solid #DBC1AC;
+    border-radius: 8px;
+    color: #DBC1AC;
+    font-size: 1rem;
+    text-align: center;
+	font-family:'K24KurdishBold-Bold';
+    box-sizing: border-box; 
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    background-color: #201409; 
+    color: #DBC1AC; 
+    border: 1px solid #DBC1AC;
+}
+
+select {
+    -webkit-appearance: none;  
+    -moz-appearance: none;    
+    appearance: none;         
+    background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22 width=%2220%22 height=%2220%22%3E%3Cpath fill=%22%23DBC1AC%22 d=%22M5 7l5 5 5-5H5z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;  
+}
+
+select:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #DBC1AC, 0 0 20px #DBC1AC;
+    transition: 0.3s ease-in-out;
+	font-family:'K24KurdishBold-Bold';
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #DBC1AC;
+    color: #201409;
+    cursor: pointer;
+    box-shadow: 0 0 10px #DBC1AC, 0 0 20px #DBC1AC;
+    transition: 0.3s ease-in-out;
+	font-family:'K24KurdishBold-Bold';
+}
+
+h2 ،h1{
+	 font-size:23px;
+    color: #DBC1AC;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #DBC1AC;
+}
+
+a {
+	 font-size:23px;
+    color: #DBC1AC;
+    text-decoration: none;
+}
+
+a:hover {
+	 color: #fdce42;
+	 font-family:'K24KurdishBold-Bold';
+    text-decoration: underline;
+}
+input::placeholder,
+textarea::placeholder {
+    color: #DBC1AC; 
+    opacity: 1; 
+}
+button,select{
+	
+	font-size:20px;
+	font-family:'K24KurdishBold-Bold';
+}
+label{
+	
+	font-size:20px;
+	font-family:'K24KurdishBold-Bold';
+}
