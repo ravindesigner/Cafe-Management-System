@@ -7,4 +7,4 @@ This system helps manage coffee shop tasks, including taking and processing orde
 
 URL
 
-www.coffee.siciit.com
+coffee.siciit.com
