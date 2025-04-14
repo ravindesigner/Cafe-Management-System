@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $update = $pdo->prepare("UPDATE storage SET product_quantity = ? WHERE product_id = ?");
         $update->execute([$new_qty, $product_id]);
 
-        $success = "داواکاری بەسەرکەوتووی دانرا  {$quantity} x {$product['product_name']}.";
+        $success = "{$quantity} x {$product['product_name']} داواکاری بەسەرکەوتووی دانرا  ";
     } else {
         $error = "رێژەی پێویست بەردەست نییە لە کۆگا";
     }
@@ -87,8 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="dashboard-page">
     <div class="dashboard-box">
         <h2>سازکردنی داواکاری نوێ</h2>
-        <?php if ($error): ?><p class="error"><?= $error ?></p><?php endif; ?>
-        <?php if ($success): ?><p class="success"><?= $success ?></p><?php endif; ?>
+        <?php if ($error): ?><p class="error"><span style="color:red;text-shadow: 0px 0px 10px red;"><?= $error ?></p><?php endif; ?>
+        <?php if ($success): ?><p class="success"><span style="color: #ff7200;text-shadow: 0px 0px 10px #ff9b4b;"><?= $success ?></p><?php endif; ?>
 
         <form method="POST">
             <div class="product-grid">
