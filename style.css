@@ -19,7 +19,10 @@ body {
     height: 100vh;
     margin: 0;
 }
-
+form{
+	
+	border-radius:12px;
+}
 .container {
     background: #DBC1AC;
     padding: 40px;
@@ -43,7 +46,7 @@ select {
     border: 1px solid #DBC1AC;
     border-radius: 8px;
     color: #DBC1AC;
-    font-size: 1rem;
+ font-size:23px;
     text-align: center;
 	font-family:'K24KurdishBold-Bold';
     box-sizing: border-box; 
@@ -112,11 +115,11 @@ textarea::placeholder {
 }
 button,select{
 	
-	font-size:20px;
+	 font-size:23px;
 	font-family:'K24KurdishBold-Bold';
 }
 label{
 	
-	font-size:20px;
+	 font-size:23px;
 	font-family:'K24KurdishBold-Bold';
 }
