@@ -44,18 +44,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
             }
 
            
-            if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === 0) {
-                $imageType = strtolower(pathinfo($_FILES['product_image']['name'], PATHINFO_EXTENSION));
+            if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
+                $imageType = strtolower(pathinfo($_FILES["product_image"]["name"], PATHINFO_EXTENSION));
+
                 if ($imageType === 'png') {
-                    $safeName = preg_replace('/[^a-z0-9_\-]/i', '_', $product['product_name']);
-                    $imagePath = $imageDir . $safeName . ".png";
-                    if (move_uploaded_file($_FILES['product_image']['tmp_name'], $imagePath)) {
-                        $message = "وێنەکە بە سەرکەوتووی بارکرا";
-                    } else {
-                        $error = "شکست لەبارکردنی وێنە";
+                    $productNameQuery = $pdo->prepare("SELECT product_name FROM storage WHERE product_id = ?");
+                    $productNameQuery->execute([$product_id]);
+                    $result = $productNameQuery->fetch();
+                    if ($result) {
+                        $productName = strtolower(trim($result['product_name']));
+                        $imagePath = "/var/www/coffee.siciit.com/images/" . $productName . ".png";
+                        move_uploaded_file($_FILES["product_image"]["tmp_name"], $imagePath);
                     }
-                } else {
-                    $error = "تەنها  png رێپێدراوە";
                 }
             } else {
                 $message = "بەرهەم زیادکرا بە سەرکەوتووی";
@@ -114,8 +114,8 @@ if (isset($_GET['product_id'])) {
             <input type="hidden" name="product_id" value="<?= $product_to_edit['product_id'] ?>">
 
             <p><strong><?= htmlspecialchars($product_to_edit['product_name']) ?></strong></p>
-            <p>رێژەی ئێستا: <?= $product_to_edit['product_quantity'] ?></p>
-            <p>نرخی ئێستا: $<?= number_format($product_to_edit['product_price'], 2) ?></p>
+            <p>رێژەی ئێستا <?= $product_to_edit['product_quantity'] ?></p>
+            <p>نرخی ئێستا $<?= number_format($product_to_edit['product_price'], 2) ?></p>
 
             <label>بڕی زیاد/کەم کردن:</label>
             <input type="number" name="quantity" min="0"><br>
@@ -128,7 +128,7 @@ if (isset($_GET['product_id'])) {
 
             <button type="submit" name="action" value="add">➕ زیادکردن</button>
             <button type="submit" name="action" value="subtract">➖ کەمکردن</button>
-            <button type="submit" name="action" value="delete" onclick="return confirm('Are you sure you want to delete this product?')">🗑️ سڕینەوە</button>
+            <button type="submit" name="action" value="delete" onclick="return confirm('ئایە دڵنیای لە سڕینەوەی بەرهەم؟')">🗑️ سڕینەوە</button>
         </form>
     <?php endif; ?>
 
